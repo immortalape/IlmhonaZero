@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">IlmhonaZero</string>
+    <string name="hello">Hello</string>
+    <string name="age">age: %1$d</string>
+    <string name="timer_string">time left: %1$d secs</string>
+    <string name="highscore_string">highest score: %1$d pts</string>
+
 </resources>
