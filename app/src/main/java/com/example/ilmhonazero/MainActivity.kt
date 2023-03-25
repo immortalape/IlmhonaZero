@@ -2,6 +2,9 @@ package com.example.ilmhonazero
 
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.animation.Animation
+import android.view.animation.Animation.AnimationListener
+import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +15,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val enlargeAnimation = AnimationUtils.loadAnimation(this, R.anim.enlarge)
 
         val TIMER_DURATION = 10000L //timer duration
         var timerIsStarted = false //timer state
@@ -45,6 +50,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         scoreButton.setOnClickListener {
+            it.startAnimation(enlargeAnimation)
             if (!timerIsStarted) {
                 timer.start()
                 timerIsStarted = true
